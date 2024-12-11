@@ -17,7 +17,7 @@ with st.sidebar:
 
         if st.button(label = "upload", type = "primary") :
                 #function to read data and upload to vector db
-                vectorizer.document_uploader(file)
+                vectorizer.document_uploader(file.read())
                 st.write("Document uploaded. Now you can ask questions related to your document to the chatbot")
 
 
