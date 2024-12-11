@@ -1,7 +1,7 @@
 langchain_aws
 langchain
-langchain.embeddings
 boto3
 langchain_pinecone
+langchain_core
 pinecone
 uuid
