@@ -18,7 +18,7 @@ with st.sidebar:
         if st.button(label = "upload", type = "primary") :
                 #function to read data and upload to vector db
                 vectorizer.document_uploader(file.read())
-                st.write("Document uploaded. Now you can ask questions related to your document to the chatbot")
+                st.write("Document uploaded.  Refresh the page once, then you can ask questions related to your document to the chatbot")
 
     file2 = st.file_uploader(label = "Select your .pdf document")
     
@@ -29,7 +29,7 @@ with st.sidebar:
         if st.button(label = "upload", type = "primary") :
                 #function to read data and upload to vector db
                 vectorizer.pdf_uploader(file2)
-                st.write("Document uploaded. Now you can ask questions related to your document to the chatbot")
+                st.write("Document uploaded. Refresh the page once, then you can ask questions related to your document to the chatbot")
 
 st.title("Assistant bot")
 
