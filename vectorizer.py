@@ -6,7 +6,8 @@
 import json
 import boto3
 import os
-#from langchain_aws import BedrockEmbeddings
+import streamlit as st
+from langchain_aws import BedrockEmbeddings
 from langchain_pinecone import PineconeVectorStore
 from pinecone import Pinecone # Import Pinecone class
 from langchain.text_splitter import CharacterTextSplitter
@@ -14,10 +15,10 @@ from langchain_core.documents import Document
 from uuid import uuid4
 def document_uploader(document):
 
-    os.environ['PINECONE_API_KEY']= 'pcsk_CsMaa_A43NCBFZCg6hz2pwR7Tg2uXJpcckWveWq9FhnTExPSN41KmbEUQ3yXgsTcV9e4'
-    os.environ['AWS_ACCESS_KEY_ID']= 'AKIA4AQ3T5MLKFVH3WNI'
-    os.environ['AWS_SECRET_ACCESS_KEY']= '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'
-    os.environ['AWS_DEFAULT_REGION']=  "us-east-1"
+    os.environ['PINECONE_API_KEY']= st.secrets["PINECONE_API_KEY"]
+    os.environ['AWS_ACCESS_KEY_ID']= st.secrets["AWS_ACCESS_KEY_ID"]
+    os.environ['AWS_SECRET_ACCESS_KEY']= st.secrets["AWS_SECRET_ACCESS_KEY"]
+    os.environ['AWS_DEFAULT_REGION']=  st.secrets["AWS_DEFAULT_REGION"]
 
     embeddings = BedrockEmbeddings(model_id="amazon.titan-embed-text-v1")
 

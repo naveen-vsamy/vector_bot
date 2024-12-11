@@ -4,13 +4,14 @@ import json
 import time
 from langchain.embeddings import BedrockEmbeddings
 from langchain_pinecone.vectorstores import PineconeVectorStore
+import streamlit as st
 
 #Create the connection to Bedrock
 bedrock_runtime = boto3.client(service_name='bedrock-runtime',
-    region_name='us-east-1', aws_access_key_id='AKIA4AQ3T5MLKFVH3WNI',
-    aws_secret_access_key='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')
+    region_name=st.secrets["AWS_DEFAULT_REGION"], aws_access_key_id=st.secrets["AWS_ACCESS_KEY_ID"],
+    aws_secret_access_key=st.secrets["AWS_SECRET_ACCESS_KEY"])
 
-os.environ['PINECONE_API_KEY']='pcsk_CsMaa_A43NCBFZCg6hz2pwR7Tg2uXJpcckWveWq9FhnTExPSN41KmbEUQ3yXgsTcV9e4'
+os.environ['PINECONE_API_KEY']=st.secrets["PINECONE_API_KEY"]
 def similar_doc(prompt):
     index_name = "whale"
 
