@@ -9,7 +9,7 @@ import time
 with st.sidebar:
     st.title("Private Document")
    
-    file = st.file_uploader(label = "Select your text document")
+    file = st.file_uploader(label = "Select your .txt document")
     
     if file != None :
             #function to read data and upload to vector db
@@ -20,6 +20,16 @@ with st.sidebar:
                 vectorizer.document_uploader(file.read())
                 st.write("Document uploaded. Now you can ask questions related to your document to the chatbot")
 
+    file2 = st.file_uploader(label = "Select your .pdf document")
+    
+    if file2 != None :
+            #function to read data and upload to vector db
+           # st.write("Document uploaded. Now you can ask questions related to your document to the chatbot")
+
+        if st.button(label = "upload", type = "primary") :
+                #function to read data and upload to vector db
+                vectorizer.pdf_uploader(file2)
+                st.write("Document uploaded. Now you can ask questions related to your document to the chatbot")
 
 st.title("Assistant bot")
 
