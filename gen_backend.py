@@ -13,7 +13,7 @@ bedrock_runtime = boto3.client(service_name='bedrock-runtime',
 
 os.environ['PINECONE_API_KEY']=st.secrets["PINECONE_API_KEY"]
 def similar_doc(prompt):
-    index_name = "whale"
+    index_name = "resume"
 
     embedding_model = BedrockEmbeddings(client=bedrock_runtime,model_id="amazon.titan-embed-text-v1" )
                     
