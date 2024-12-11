@@ -1,11 +1,12 @@
 import json
 import boto3
 import os
-#from langchain_aws import BedrockEmbeddings
+from langchain_aws import BedrockEmbeddings
 from langchain_pinecone import PineconeVectorStore
 from pinecone import Pinecone # Import Pinecone class
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_core.documents import Document
+from pypdf import PdfReader
 from uuid import uuid4
 import streamlit as st
 
@@ -62,7 +63,7 @@ def pdf_uploader(file):
     vector_store = PineconeVectorStore(index=index, embedding=embeddings)
 
     # create a loader
-       
+    file = PdfReader(file)
     docs = []
     doc = file.pages[0].extract_text()
     l = len(file.pages)
