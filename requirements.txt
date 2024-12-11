@@ -1,0 +1,6 @@
+langchain_aws
+langchain
+boto3
+langchain_pinecone
+pinecone
+uuid
