@@ -2,6 +2,7 @@ langchain_aws
 langchain
 boto3
 langchain_pinecone
+langchain_community
 langchain_core
 pinecone
 uuid
