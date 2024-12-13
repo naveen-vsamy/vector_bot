@@ -37,8 +37,8 @@ def document_uploader(document):
     # split documents into chunks
     text_splitter = CharacterTextSplitter(
         separator='\n',
-        chunk_size=300,
-        chunk_overlap=30,
+        chunk_size=500,
+        chunk_overlap=40,
 
     )
     split_docs = text_splitter.split_documents(docs)
@@ -75,8 +75,8 @@ def pdf_uploader(file):
     # split documents into chunks
     text_splitter = CharacterTextSplitter(
         separator='\n',
-        chunk_size=150,
-        chunk_overlap=25,
+        chunk_size=1000,
+        chunk_overlap=70,
 
     )
     split_docs = text_splitter.split_documents(docs)
