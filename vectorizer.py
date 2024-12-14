@@ -16,6 +16,7 @@ os.environ['AWS_SECRET_ACCESS_KEY']= st.secrets["AWS_SECRET_ACCESS_KEY"]
 os.environ['AWS_DEFAULT_REGION']=  st.secrets["AWS_DEFAULT_REGION"]
 
 
+'''
 def document_uploader(document):
 
     embeddings = BedrockEmbeddings(model_id="amazon.titan-embed-text-v1")
@@ -48,7 +49,7 @@ def document_uploader(document):
     vector_store.add_documents(documents=split_docs, ids=uuids)
     
     return True
-
+'''
 def pdf_uploader(file):
 
     embeddings = BedrockEmbeddings(model_id="amazon.titan-embed-text-v1")
