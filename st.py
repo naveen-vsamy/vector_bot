@@ -8,7 +8,7 @@ import time
 
 with st.sidebar:
     st.title("Upload your PDF file here")
-    st.title("## Can't open pdf's with password protection")
+    st.markdown("Please don't upload password protected pdf's or documents with sensitive personal information")
     file2 = st.file_uploader(label = "Select your .pdf document")
     
     if file2 != None :
