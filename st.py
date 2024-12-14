@@ -7,8 +7,8 @@ import vectorizer
 import time
 
 with st.sidebar:
-    st.title("Private Document")
-   
+    st.title("Upload your PDF file here")
+    st.title("## Can't open pdf's with password protection")
     file2 = st.file_uploader(label = "Select your .pdf document")
     
     if file2 != None :
