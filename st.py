@@ -21,6 +21,7 @@ with st.sidebar:
                 st.write("PDF document uploaded. Refresh the page once, then you can ask questions related to your document to the chatbot")
 
 st.title("PDF Assistant bot")
+st.makdown("Please enter your queries with in proper wordings. Try to ask questions with clear information. This bot doesn't remember earlier questions, so each query's response depends on the indivudal query and data from the document alone.")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
