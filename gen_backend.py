@@ -41,7 +41,7 @@ def create_response(human_input):
     prompt_data = PROMPT.format(human_input=human_input, context=similar_doc(human_input))
     inputText=prompt_data
     body_part=json.dumps({'inputText': inputText,
-    'textGenerationConfig': {'maxTokenCount': 300,
+    'textGenerationConfig': {'maxTokenCount': 500,
     'stopSequences': [],
     'temperature': 0,
     'topP': 1}})
@@ -49,7 +49,7 @@ def create_response(human_input):
         body=body_part,
         contentType="application/json",
         accept="application/json",
-        modelId='amazon.titan-text-express-v1'
+        modelId='amazon.titan-text-premier-v1:0'
     )
 
     response =  json.loads(response['body'].read())["results"][0]["outputText"]
